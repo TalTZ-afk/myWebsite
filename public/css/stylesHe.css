@@ -1,0 +1,13 @@
+body {
+    text-align: right;
+    font-family: 'Rubik', sans-serif;
+}
+
+.about p {
+    margin-left: 10%;
+    margin-right: 1.5rem;
+}
+
+.work .card-footer {
+    text-align: right;
+}
