@@ -2,10 +2,21 @@
   "name": "mywebsite",
   "version": "1.0.0",
   "description": "My website...",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4"
+  },
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "Tal Tzabari",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.2"
+  }
 }
