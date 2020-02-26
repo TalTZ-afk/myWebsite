@@ -1,6 +1,6 @@
 
 <%- include (header) -%>
-    
+
       <div class="header-container">
         <div class="header">
           <div class="header-img">
@@ -12,13 +12,16 @@
       </div>
     <div class="background">
 
-      <div class="about section" id="about">
-        <div class="about-slide" id="about-slide">
-          <h1><%=aboutHeader%></h1> 
-          <p> 
-            <%=aboutParagraph%>
-          </p>
-        </div>
+      <div class="<%=about%> card-section" id="about">
+        <h1><%=aboutHeader%></h1>
+          <div class="<%=aboutSlide%>" id="about-slide">
+            <p>
+              <%=aboutParagraph%>
+            </p>
+          </div>
+          <div class="<%=imgDiv%>">
+            <img class="cube-img" src="https://www.picgifs.com/graphics/r/rubiks-cube/animaatjes-rubiks-cube-7217468.gif" alt="cube-img">
+          </div>
       </div>
       <script>
         $(document).scroll(function () {
@@ -26,30 +29,30 @@
           var x = $("#about").position();
 
           if (y = (x.top - 50)) { // -50 so things don't overlap
-            $(".about-slide").addClass(
+            $("#about-slide").addClass(
               "slideInAnimation"
             );
           }
           else {
-            $(".about-slide").removeClass(
+            $("#about-slide").removeClass(
               "slideInAnimation"
             );
           }
         });
       </script>
 
-      
+
 
       <div class="skills card-section" id="skills">
-        <h1><%=skillsHeader%></h1> 
+        <h1><%=skillsHeader%></h1>
         <div class="row">
           <div class="col-xl-4 col-lg-6 col-md-6">
             <div class="card">
               <div class="card-header">
-                <h3><%=skillsFirstCardHeader%></h3> 
+                <h3><%=skillsFirstCardHeader%></h3>
               </div>
               <div class="card-body">
-                <p> 
+                <p>
                   <%=skillsFirstCardParagraph%>
                 </p>
               </div>
@@ -70,7 +73,7 @@
           <div class="col-xl-4">
             <div class="card text-center">
               <div class="card-header">
-                <h3><%=skillsThirdCardHeader%></h3> 
+                <h3><%=skillsThirdCardHeader%></h3>
               </div>
               <div class="card-body">
                 <p>
@@ -88,7 +91,7 @@
           <div class="<%=workText%> col-lg-8 col-md-8">
             <p>
               <%=workParagraphFirst%>
-              <br> 
+              <br>
               <%=workParagraphSecond%>
             </p>
           </div>
@@ -127,7 +130,7 @@
         <br>
         <a class="contact-href" href="https://github.com/TalTZ-afk"><i class="fab fa-github"></i> <%=githubText%></a>
     </div>
-    
+
     <a class="top-link hide" href="" id="js-top">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
       <span class="screen-reader-text">Back to top</span>
@@ -138,7 +141,7 @@
 
       function scrollFunc() {
       let y = window.scrollY;
-      
+
         if (y > 0) {
           scrollToTopButton.className = "top-link show";
         } else {
@@ -150,7 +153,7 @@
 
       function scrollToTop() {
         const c = document.documentElement.scrollTop || document.body.scrollTop;
-        
+
         if (c > 0) {
           window.requestAnimationFrame(scrollToTop);
           window.scrollTo(0, c - c / 10);
@@ -165,6 +168,6 @@
 
   </body>
 
-  <footer>Copyrights © <%= year %></footer>
+  <footer>Copyrights Tal Tzabari © <%= year %></footer>
 
 </html>

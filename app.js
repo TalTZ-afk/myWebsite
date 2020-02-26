@@ -34,8 +34,11 @@ app.get("/:language", function(req, res) {
     let language = req.params.language;
     let header = "";
     let headTitle = "";
+    let about = "";
     let aboutHeader = "";
+    let aboutSlide = "";
     let aboutParagraph = "";
+    let imgDiv = "";
     let skillsHeader = "";
     let skillsFirstCardHeader = "";
     let skillsFirstCardParagraph = "";
@@ -58,8 +61,11 @@ app.get("/:language", function(req, res) {
     if(language === "en-us") {
         header = "partials/headerEn";
         headTitle = "CONNECT YOUR BUSINESS ONLINE!";
+        about = "about";
         aboutHeader = "About Myself";
+        aboutSlide = "about-slide";
         aboutParagraph = "A skilled Full-Stack Web Developer, who likes challenges and puzzles, knows how to work with the most advanced tools on the market. I love coding and I'm a hard worker who wants to get as much experience as possible. You know how your website should look? Awsome! let me build it for you!";
+        imgDiv = "img-div";
         skillsHeader = "My Skills";
         skillsFirstCardHeader = "HTML/CSS/JS";
         skillsFirstCardParagraph = "Basic components of a websites that can create beautiful things in the right hands";
@@ -82,9 +88,12 @@ app.get("/:language", function(req, res) {
         githubText = "My GitHub Account";
     } else if(language === "he-il"){
         header = "partials/headerHe";
-        headTitle = "חבר את העסק שלך לאינטרנט";
+        headTitle = "חבר את העסק שלך לאינטרנט!";
+        about = "about-he";
         aboutHeader = "מי אני";
+        aboutSlide = "about-slide-he";
         aboutParagraph = "מתכנת מוכשר בסביבת האינטרנט, שאוהב אתגרים. אני יודע לעבוד עם הכלים המתקדמים ביותר בשוק. אני אוהב לקודד ורוצה להשיג כמה שיותר נסיון בתחום. יודעים איך אתם רוצים שיראה האתר שלכם? מעולה! תנו לי לבנות אותו!";
+        imgDiv = "img-div-he";
         skillsHeader = "הכישורים שלי";
         skillsFirstCardHeader = "React.js";
         skillsFirstCardParagraph = "כלי מתקדם שעוזר ליצור אפלקציות רשת בקלות ובאיכות גבוהה, אתרים גדולים כמו פייסבוק משתמשים בו בתדירות גבוהה, אתם יכולים לראות אפלקציות רשת שאני בניתי למטה";
@@ -111,8 +120,11 @@ app.get("/:language", function(req, res) {
     res.render("home", {
         header: header,
         headTitle: headTitle,
+        about: about,
         aboutHeader: aboutHeader,
+        aboutSlide: aboutSlide,
         aboutParagraph: aboutParagraph,
+        imgDiv: imgDiv,
         skillsHeader: skillsHeader,
         skillsFirstCardHeader: skillsFirstCardHeader,
         skillsFirstCardParagraph: skillsFirstCardParagraph,
@@ -133,13 +145,13 @@ app.get("/:language", function(req, res) {
         contactInputPhone: contactInputPhone,
         contactButton: contactButton,
         githubText: githubText,
-        year: date.getFullYear() 
+        year: date.getFullYear()
     });
 });
 
 app.post("/email", function(req, res) {
 
-    let mailContent = 
+    let mailContent =
         "name: " + req.body.fullName +
         " email: " + req.body.email +
         " phone number: " + req.body.phoneNumber
@@ -165,7 +177,7 @@ app.post("/email", function(req, res) {
     let direction = reqOrigin.slice(directionIndex, (directionIndex + 6));
     direction = direction + "/#contact";
     res.redirect(direction);
-    
+
 });
 
 app.get("*", function(req, res) {
@@ -174,7 +186,7 @@ app.get("*", function(req, res) {
     let lead = "";
     let text = "";
     let button = "";
-  
+
     if(req.headers["accept-language"].slice(0,2) === "he") {
       lead = "!?איך הלכתם לאיבוד";
       text = "תנו לי לעזור לכם לחזור לחוף מבטחים";
@@ -195,5 +207,5 @@ app.get("*", function(req, res) {
   });
 
 app.listen(process.env.PORT || 3000, function() {
-    console.log("Server started on port 3000");  
+    console.log("Server started on port 3000");
 });

@@ -10,6 +10,7 @@ body {
 
 .background {
     background-color: rgb(255, 255, 255);
+    height: 100%;
 }
 
 .navbar {
@@ -37,7 +38,7 @@ body {
 .header-container {
     margin: 0 0 15% 0;
     height: 100%;
-    
+
 }
 
 .header {
@@ -93,26 +94,54 @@ h1 {
 }
 
 .about {
-    height: 20rem;
+  height: 30rem;
+}
+
+.about-he {
+  height: 30rem;
 }
 
 .about-slide {
     position: absolute;
     display: transparent;
-    margin-top: 10%;
-    height: 2rem;
+    width: 90%;
     z-index: -1;
+    text-align: left;
+    padding: 2% 10.2%;
 }
 
-@media only screen and (max-width: 500px) {
+.about-slide p {
+    width: 60%;
+}
 
-    .about {
-        height: 25rem;
-    }
+.about-slide-he {
+    position: absolute;
+    display: transparent;
+    width: 90%;
+    z-index: -1;
+    text-align: right;
+    padding: 2% 10.2%;
+}
 
-    .about p {
-        min-width: 80%;
-    }
+.about-slide-he p {
+    width: 60%;
+}
+
+.img-div {
+  position: relative;
+  top: -4rem;
+  left: 35%;
+}
+
+.img-div-he {
+  position: relative;
+  width: 20rem;
+  top: -4rem;
+  right: 70%;
+}
+
+.cube-img {
+  width: 20rem;
 }
 
 .slideInAnimation {
@@ -127,17 +156,6 @@ h1 {
 
 .section {
     padding: 10% 10.2%;
-}
-
-.about p {
-    margin-left: 1.5rem;
-    max-width: 60%;
-}
-
-.d-block {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
 }
 
 .card-section {
@@ -272,7 +290,7 @@ input[type="tel"] {
     width: 260px;
     margin: 5% 0;
 }
-  
+
 input[type="tel"]:focus {
     outline: none;
     box-shadow: inset 0 -3px 0 0 #fff;
@@ -290,7 +308,7 @@ input[type="tel"]:focus {
 }
 
 /* floating button css */
-    
+
 .intro-copy {
     padding: 1em;
     margin: 50vh auto;
@@ -301,7 +319,7 @@ input[type="tel"]:focus {
     line-height: 1.2;
     text-align: center;
 }
-  
+
 .top-link {
     transition: all .25s ease-in-out;
     position: fixed;
@@ -343,7 +361,7 @@ input[type="tel"]:focus {
 .top-link:hover svg {
     fill: #000000;
 }
-  
+
 .screen-reader-text {
     position: absolute;
     clip-path: inset(50%);
@@ -388,18 +406,93 @@ footer {
     margin: 5rem auto 0 auto;
     background-color: rgba(255, 255, 255, 0.4);
 }
-  
+
 .h1-404 {
     font-size: 7rem;
     font-weight: 900;
     margin-bottom: 2rem;
 }
-  
+
 .text-404 {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
-  
+
 .a-404 {
     width: 15rem;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .about {
+        height: 40rem;
+    }
+
+    .about-he {
+        height: 33rem;
+    }
+
+    .about-slide {
+        position: absolute;
+        display: transparent;
+        width: 90%;
+        z-index: -1;
+        text-align: center;
+        padding: 0 10.2%;
+    }
+
+    .about-slide p {
+        width: 100%;
+    }
+
+    .about-slide-he {
+        position: absolute;
+        display: transparent;
+        width: 90%;
+        z-index: -1;
+        text-align: center;
+        padding: 0 10.2%;
+    }
+
+    .about-slide-he p {
+        width: 100%;
+    }
+
+    .img-div {
+      position: relative;
+      top: 15rem;
+      left: 0;
+    }
+
+    .img-div-he {
+      position: relative;
+      top: 10rem;
+      right: 0;
+    }
+
+    .work-text {
+        text-align: center;
+        padding: 5% 10.2%;
+    }
+
+    .work-text-he {
+        text-align: center;
+        padding: 5% 10.2%;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 768px) {
+
+  .img-div {
+    position: relative;
+    top: -3rem;
+    left: 30%;
+  }
+
+  .img-div-he {
+    position: relative;
+    width: 20rem;
+    top: -3rem;
+    right: 60%;
+  }
 }
